@@ -1,0 +1,19 @@
+version: '3'
+
+volumes: 
+    minecraft_servers:
+
+services: 
+    server:
+        restart: unless-stopped
+        build: .
+        image: thelastbilly/minecraftcontained
+        volumes: 
+            - minecraft_servers:/minecraft/servers
+            - ./maps:/minecraft/maps
+            - ./settings:/minecraft/settings
+            - ./logs:/minecraft/logs
+        env_file:
+            - variables.env
+        ports:
+            - 25565:25565
