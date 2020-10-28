@@ -6,7 +6,7 @@ volumes:
 services: 
     server:
         restart: unless-stopped
-        build: .
+        #build: .
         image: thelastbilly/minecraftcontained
         volumes: 
             - minecraft_servers:/minecraft/servers
